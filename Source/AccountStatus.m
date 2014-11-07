@@ -79,8 +79,7 @@
 {
 	[self willChangeValueForKey:@"serviceInfo"];
 
-	[serviceInfo_ autorelease];
-	serviceInfo_ = [serviceInfo retain];
+	serviceInfo_ = serviceInfo;
 	setServiceInfo_ = YES;
 
 	[self didChangeValueForKey:@"serviceInfo"];
@@ -135,7 +134,7 @@
 	// that is in this period. We are assuming that the periods start/end on the
 	// same *day* of each month (e.g. the 7th).
 	NSCalendar *calendar = [NSCalendar currentCalendar];
-	NSDateComponents *startDelta = [[[NSDateComponents alloc] init] autorelease];
+	NSDateComponents *startDelta = [[NSDateComponents alloc] init];
 	[startDelta setDay:[self daysLeft]];  // go to end of period
 	[startDelta setMonth:-1];             // ... and then back a month
 	NSDate *startDate = [calendar dateByAddingComponents:startDelta toDate:[NSDate date] options:0];

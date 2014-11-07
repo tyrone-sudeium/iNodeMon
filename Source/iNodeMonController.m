@@ -111,7 +111,7 @@
 	NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
 		font, NSFontAttributeName, textColour, NSForegroundColorAttributeName, nil];
 	NSAttributedString *as = [[NSAttributedString alloc] initWithString:str attributes:attrs];
-	[statusItem setAttributedTitle:[as autorelease]];
+	[statusItem setAttributedTitle:as];
 }
 
 - (id)init
@@ -127,12 +127,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[accountController_ release];
-
-	[super dealloc];
-}
 
 - (void)openQuickLink:(id)sender
 {
@@ -147,13 +141,13 @@
 
 - (void)buildQuickLinksMenu
 {
-	NSMenu *menu = [[[NSMenu alloc] initWithTitle:@""] autorelease];
+	NSMenu *menu = [[NSMenu alloc] initWithTitle:@""];
 
 	NSArray *quickLinks = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"InternodeQuickLinks"];
 	NSEnumerator *en = [quickLinks objectEnumerator];
 	NSDictionary *link;
 	while ((link = [en nextObject])) {
-		NSMenuItem *item = [[[NSMenuItem alloc] init] autorelease];
+		NSMenuItem *item = [[NSMenuItem alloc] init];
 		[item setTitle:[link valueForKey:@"Title"]];
 		[item setRepresentedObject:[link valueForKey:@"URL"]];
 		[item setTarget:self];
@@ -188,7 +182,6 @@
 	sb = [NSStatusBar systemStatusBar];
 
 	statusItem = [sb statusItemWithLength:NSVariableStatusItemLength];
-	[statusItem retain];
 	[statusItem setHighlightMode:YES];
 	[statusItem setImage:imageIdle];
 	[statusItem setMenu:statusbarMenu];
@@ -262,8 +255,12 @@
 						   object:nil];
 
 	// Register for various triggers
-	[Triggers registerForIPChangeTrigger:self selector:@selector(considerTriggeredUpdate:)];
-	[Triggers registerForWakeTrigger:self selector:@selector(considerTriggeredUpdate:)];
+    [Triggers setIPChangedBlock:^{
+        [self considerTriggeredUpdate: @"IP"];
+    }];
+    [Triggers setWakeBlock:^{
+        [self considerTriggeredUpdate: @"Wake"];
+    }];
 
 	// Schedule a recurring timer (every 15 minutes),
 	// and also schedule a one-off timer (in 2s) to get initial data.

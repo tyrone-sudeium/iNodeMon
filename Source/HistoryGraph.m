@@ -32,21 +32,13 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[accountController_ release];
-	[toolTipLabels_ release];
-
-	[super dealloc];
-}
 
 - (void)setAccountController:(AccountController *)accountController
 {
 	if (accountController_) {
 		[accountController_ removeObserver:self forKeyPath:@"accountHistory"];
-		[accountController_ autorelease];
 	}
-	accountController_ = [accountController retain];
+	accountController_ = accountController;
 	[accountController_ addObserver:self forKeyPath:@"accountHistory" options:0 context:nil];
 }
 

@@ -56,7 +56,6 @@
 		return NO;
 	}
 	[self willChangeValueForKey:@"password"];
-	[myPassword autorelease];
 	myPassword = [newPasswordString copy];
 	[self didChangeValueForKey:@"password"];
 	
@@ -67,7 +66,6 @@
 - (BOOL)setUsername:(NSString *)newUsername
 {
 	[self willChangeValueForKey:@"username"];
-	[myUsername autorelease];
 	myUsername = [newUsername copy];
 	[self didChangeValueForKey:@"username"];	
 	
@@ -76,7 +74,6 @@
 - (BOOL)setLabel:(NSString *)newLabel
 {
 	[self willChangeValueForKey:@"label"];
-	[myLabel autorelease];
 	myLabel = [newLabel copy];
 	[self didChangeValueForKey:@"label"];
 	
@@ -114,7 +111,7 @@
 }
 + (id)genericKeychainItem:(SecKeychainItemRef)item forServiceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password
 {
-	return [[[EMGenericKeychainItem alloc] initWithCoreKeychainItem:item serviceName:serviceName username:username password:password] autorelease];
+	return [[EMGenericKeychainItem alloc] initWithCoreKeychainItem:item serviceName:serviceName username:username password:password];
 }
 - (NSString *)serviceName
 {
@@ -124,7 +121,6 @@
 - (BOOL)setServiceName:(NSString *)newServiceName
 {
 	[self willChangeValueForKey:@"serviceName"];
-	[myServiceName autorelease];
 	myServiceName = [newServiceName copy];
 	[self didChangeValueForKey:@"serviceName"];	
 	
@@ -147,7 +143,7 @@
 }
 + (id)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
 {
-	return [[[EMInternetKeychainItem alloc] initWithCoreKeychainItem:item server:server username:username password:password path:path port:port protocol:protocol] autorelease];
+	return [[EMInternetKeychainItem alloc] initWithCoreKeychainItem:item server:server username:username password:password path:path port:port protocol:protocol];
 }
 - (NSString *)server
 {
@@ -169,7 +165,6 @@
 - (BOOL)setServer:(NSString *)newServer
 {
 	[self willChangeValueForKey:@"server"];
-	[myServer autorelease];
 	myServer = [newServer copy];	
 	[self didChangeValueForKey:@"server"];
 	
@@ -178,7 +173,6 @@
 - (BOOL)setPath:(NSString *)newPath
 {
 	[self willChangeValueForKey:@"path"];
-	[myPath autorelease];
 	myPath = [newPath copy];
 	[self didChangeValueForKey:@"path"];
 	

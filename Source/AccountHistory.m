@@ -21,20 +21,12 @@
 		return nil;
 
 	lock_ = [[NSRecursiveLock alloc] init];
-	usageData_ = [[NSArray array] retain];
-	lastDate_ = [[NSCalendarDate calendarDate] retain];
+	usageData_ = [NSArray array];
+	lastDate_ = [NSCalendarDate calendarDate];
 
 	return self;
 }
 
-- (void)dealloc
-{
-	[lock_ release];
-	[usageData_ release];
-	[lastDate_ release];
-
-	[super dealloc];
-}
 
 - (void)setHistoryFromXMLNodes:(NSArray *)nodes
 {
@@ -72,11 +64,9 @@
 
 	[self willChangeValueForKey:@"history"];
 	[self lock];
-	[usageData_ autorelease];
-	usageData_ = [data retain];
+	usageData_ = data;
 	if (lastDate) {
-		[lastDate_ autorelease];
-		lastDate_ = [lastDate retain];
+		lastDate_ = lastDate;
 	}
 	[self unlock];
 	[self didChangeValueForKey:@"history"];

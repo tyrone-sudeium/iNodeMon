@@ -36,9 +36,9 @@
 	accountHistory_ = [[AccountHistory alloc] init];
 
 	updateLock_ = [[NSLock alloc] init];
-	lastUpdateOfQuota_ = [[NSDate distantPast] retain];
-	lastUpdateOfServiceInfo_ = [[NSDate distantPast] retain];
-	lastUpdateOfHistory_ = [[NSDate distantPast] retain];
+	lastUpdateOfQuota_ = [NSDate distantPast];
+	lastUpdateOfServiceInfo_ = [NSDate distantPast];
+	lastUpdateOfHistory_ = [NSDate distantPast];
 
 	// Set up KVO
 	[accountStatus_ addObserver:self forKeyPath:@"quota" options:0 context:nil];
@@ -49,18 +49,6 @@
 	return self;
 }
 
-- (void)dealloc
-{
-	[accountStatus_ release];
-	[accountHistory_ release];
-
-	[updateLock_ release];
-	[lastUpdateOfQuota_ release];
-	[lastUpdateOfServiceInfo_ release];
-	[lastUpdateOfHistory_ release];
-
-	[super dealloc];
-}
 
 #pragma mark -
 
@@ -94,7 +82,7 @@
 		return;
 	}
 
-	serviceId_ = [[[services objectAtIndex:0] stringValue] retain];
+	serviceId_ = [[services objectAtIndex:0] stringValue];
 
 	reupdateImmediately_ = YES;
 	[self updateSemaphoreDown];
@@ -116,8 +104,7 @@
 
 	[accountStatus_ setServiceInfo:[NSString stringWithFormat:@"%@ (%@)", speed, plan]];
 
-	[lastUpdateOfServiceInfo_ autorelease];
-	lastUpdateOfServiceInfo_ = [[NSDate date] retain];
+	lastUpdateOfServiceInfo_ = [NSDate date];
 	[self updateSemaphoreDown];
 }
 
@@ -158,8 +145,7 @@
 	double quotaTotal = [quotaTotalStr doubleValue] / (1000*1000);
 	[accountStatus_ setQuotaUsed:quotaUsed quotaTotal:quotaTotal];
 
-	[lastUpdateOfQuota_ autorelease];
-	lastUpdateOfQuota_ = [[NSDate date] retain];
+	lastUpdateOfQuota_ = [NSDate date];
 	[self updateSemaphoreDown];
 }
 
@@ -177,38 +163,36 @@
 				      error:nil];
 	[accountHistory_ setHistoryFromXMLNodes:nodes];
 
-	[lastUpdateOfHistory_ autorelease];
-	lastUpdateOfHistory_ = [[NSDate date] retain];
+	lastUpdateOfHistory_ = [NSDate date];
 	[self updateSemaphoreDown];
 }
 
 - (void)waitForUpdateCompletionInThread:(id)sender
 {
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	@autoreleasepool {
 
-	[semaphoreCondition_ lockWhenCondition:0];
-	[semaphoreCondition_ unlock];
-	[semaphoreCondition_ release];
+		[semaphoreCondition_ lockWhenCondition:0];
+		[semaphoreCondition_ unlock];
 
 #ifdef DEBUG
-	NSLog(@"Updates all complete!");
+		NSLog(@"Updates all complete!");
 #endif
 
-	// -unlock must be called from the same thread as -lock.
-	// Only notify observers if we're not about to continue updating.
+		// -unlock must be called from the same thread as -lock.
+		// Only notify observers if we're not about to continue updating.
         if (!reupdateImmediately_)
-		[self willChangeValueForKey:@"isUpdating"];
-	[updateLock_ performSelectorOnMainThread:@selector(unlock) withObject:nil waitUntilDone:YES];
+			[self willChangeValueForKey:@"isUpdating"];
+		[updateLock_ performSelectorOnMainThread:@selector(unlock) withObject:nil waitUntilDone:YES];
         if (!reupdateImmediately_)
-		[self didChangeValueForKey:@"isUpdating"];
+			[self didChangeValueForKey:@"isUpdating"];
 
-	if (reupdateImmediately_) {
-		[self performSelectorOnMainThread:@selector(update)
-				       withObject:nil
-				    waitUntilDone:NO];
+		if (reupdateImmediately_) {
+			[self performSelectorOnMainThread:@selector(update)
+					       withObject:nil
+					    waitUntilDone:NO];
+		}
+
 	}
-
-	[pool release];
 }
 
 - (void)updateSemaphoreDown
@@ -259,27 +243,27 @@
 	// SERVICE_ID
 	BOOL hasServiceId = serviceId_ != nil;
 	if (!hasServiceId) {
-		[InternodeApiFetcher fetchPath:@"/"
-					object:self
-				      selector:@selector(handleServiceIdResponse:)];
+		[InternodeApiFetcher fetchPath:@"/" callback:^(NSDictionary *result) {
+            [self handleServiceIdResponse: result];
+        }];
 		++semaphore_;
 	}
 
 	if (hasServiceId && -[lastUpdateOfQuota_ timeIntervalSinceNow] >= quotaInterval) {
 		// Time to update quota
 		NSString *path = [NSString stringWithFormat:@"/%@/usage", serviceId_];
-		[InternodeApiFetcher fetchPath:path
-					object:self
-				      selector:@selector(handleUsageResponse:)];
+		[InternodeApiFetcher fetchPath:path callback:^(NSDictionary *result) {
+            [self handleUsageResponse: result];
+        }];
 		++semaphore_;
 	}
 
 	if (hasServiceId && -[lastUpdateOfServiceInfo_ timeIntervalSinceNow] >= serviceInfoInterval) {
 		// Time to update service info (should be rare, except on startup)
 		NSString *path = [NSString stringWithFormat:@"/%@/service", serviceId_];
-		[InternodeApiFetcher fetchPath:path
-					object:self
-				      selector:@selector(handleServiceInfoResponse:)];
+		[InternodeApiFetcher fetchPath:path callback:^(NSDictionary *result) {
+            [self handleServiceInfoResponse: result];
+        }];
 		++semaphore_;
 	}
 
@@ -287,9 +271,9 @@
 		// Time to update history (should be somewhat rare, except on startup)
 		// TODO: This only gets one year's worth. Get more?
 		NSString *path = [NSString stringWithFormat:@"/%@/history", serviceId_];
-		[InternodeApiFetcher fetchPath:path
-					object:self
-				      selector:@selector(handleHistoryResponse:)];
+		[InternodeApiFetcher fetchPath:path callback:^(NSDictionary *result) {
+            [self handleHistoryResponse: result];
+        }];
 		++semaphore_;
 	}
 

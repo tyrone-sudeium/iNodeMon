@@ -11,7 +11,7 @@
 
 
 @interface InternodeApiFetcher (Private)
-
+@property (nonatomic, strong) void(^callback)(NSDictionary*);
 - (void)runCallback;
 
 @end
@@ -20,17 +20,14 @@
 
 @implementation InternodeApiFetcher
 
-- (id)initWithPath:(NSString *)path object:(id)object selector:(SEL)selector
+- (id)initWithPath:(NSString *)path callback: (void(^)(NSDictionary*)) callback
 {
 	if (!(self = [super init]))
 		return nil;
 
 	data_ = [[NSMutableData alloc] init];
 
-	NSMethodSignature *sig = [object methodSignatureForSelector:selector];
-	callback_ = [[NSInvocation invocationWithMethodSignature:sig] retain];
-	[callback_ setTarget:object];
-	[callback_ setSelector:selector];
+    self.callback = callback;
 	failed_ = NO;
 
 	NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
@@ -59,42 +56,65 @@
 + (void)fetchPath:(NSString *)path object:(id)object selector:(SEL)selector
 {
 	// The created object here will self-destruct after invoking the callback.
-	[[self alloc] initWithPath:path object:object selector:selector];
+//	[[self alloc] initWithPath:path object:object selector:selector];
+    // Deprecated
 }
 
-- (void)dealloc
-{
-	[conn_ release];
-	[data_ release];
-	[callback_ release];
-	[super dealloc];
+static NSMutableSet *runningFetchers = nil;
+
+static void AddFetcher(InternodeApiFetcher *fetcher) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (runningFetchers == nil) {
+            runningFetchers = [NSMutableSet new];
+        }
+        if (fetcher) {
+            [runningFetchers addObject: fetcher];
+        }
+    });
 }
+
+static void RemoveFetcher(InternodeApiFetcher *fetcher) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (runningFetchers == nil) {
+            runningFetchers = [NSMutableSet new];
+        }
+        if (fetcher) {
+            [runningFetchers removeObject: fetcher];
+        }
+    });
+}
+
++ (void)fetchPath:(NSString *)path callback:(void (^)(NSDictionary *))callback
+{
+    AddFetcher([[self alloc] initWithPath: path callback: callback]);
+}
+
 
 - (void)runCallback
 {
 #ifdef DEBUG
 	NSLog(@"Raw response:\n-----\n%@\n-----",
-	      [[[NSString alloc] initWithData:data_ encoding:NSUTF8StringEncoding] autorelease]);
+	      [[NSString alloc] initWithData:data_ encoding:NSUTF8StringEncoding]);
 #endif
 	NSError *error = nil;
 	NSXMLDocument *doc = nil;
 	if (!failed_) {
-		doc = [[[NSXMLDocument alloc] initWithData:data_ options:0 error:&error] autorelease];
+		doc = [[NSXMLDocument alloc] initWithData:data_ options:0 error:&error];
 		if (!doc)
 			NSLog(@"Bad XML document: %@", [error localizedDescription]);
 	} else {
 		// TODO: more useful errors here!
 		error = [NSError errorWithDomain:@"iNodeMon" code:2 userInfo:nil];
 	}
-	NSMutableDictionary *result = [[[NSMutableDictionary alloc] initWithObjectsAndKeys:
+	NSMutableDictionary *result = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 					doc, @"document",
 					error, @"error",
-					nil] autorelease];
-	
-	[callback_ setArgument:&result atIndex:2];
-	[callback_ invoke];
+					nil];
+    if (self.callback) {
+        self.callback(result);
+    }
 
-	[self release];		// self-destruct
+    RemoveFetcher(self);
 }
 
 // Copied out of PrefsController.m.
@@ -148,7 +168,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 #ifdef DEBUG
-	NSLog(@"got %d bytes more data...", [data length]);
+	NSLog(@"got %lu bytes more data...", (unsigned long)[data length]);
 #endif
 	[data_ appendData:data];
 }
