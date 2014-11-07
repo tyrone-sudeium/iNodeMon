@@ -20,10 +20,10 @@
 - (void)lock;
 - (void)unlock;
 
-- (float)max;
+@property (nonatomic, readonly) float max;
 - (float)maxInLastDays:(int)numDaysAgo;
-- (int)numDays;
-- (NSCalendarDate *)lastDate;
+@property (nonatomic, readonly) int numDays;
+@property (nonatomic, readonly, copy) NSCalendarDate *lastDate;
 - (float)usageFrom:(int)numDaysAgo;
 
 @end

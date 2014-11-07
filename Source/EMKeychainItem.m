@@ -25,7 +25,7 @@
 #import "EMKeychainItem.h"
 
 @implementation EMKeychainItem
-- (id)initWithCoreKeychainItem:(SecKeychainItemRef)item username:(NSString *)username password:(NSString *)password
+- (instancetype)initWithCoreKeychainItem:(SecKeychainItemRef)item username:(NSString *)username password:(NSString *)password
 {
 	if ((self = [super init]))
 	{
@@ -100,7 +100,7 @@
 @end
 
 @implementation EMGenericKeychainItem
-- (id)initWithCoreKeychainItem:(SecKeychainItemRef)item serviceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password
+- (instancetype)initWithCoreKeychainItem:(SecKeychainItemRef)item serviceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password
 {
 	if ((self = [super initWithCoreKeychainItem:item username:username password:password]))
 	{
@@ -109,7 +109,7 @@
 	}
 	return nil;
 }
-+ (id)genericKeychainItem:(SecKeychainItemRef)item forServiceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password
++ (instancetype)genericKeychainItem:(SecKeychainItemRef)item forServiceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password
 {
 	return [[EMGenericKeychainItem alloc] initWithCoreKeychainItem:item serviceName:serviceName username:username password:password];
 }
@@ -129,19 +129,19 @@
 @end
 
 @implementation EMInternetKeychainItem
-- (id)initWithCoreKeychainItem:(SecKeychainItemRef)item server:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
+- (instancetype)initWithCoreKeychainItem:(SecKeychainItemRef)item server:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
 {
 	if ((self = [super initWithCoreKeychainItem:item username:username password:password]))
 	{
 		[self setValue:server forKey:@"myServer"];
 		[self setValue:path forKey:@"myPath"];
-		[self setValue:[NSNumber numberWithInt:port] forKey:@"myPort"];
-		[self setValue:[NSNumber numberWithInt:protocol] forKey:@"myProtocol"];
+		[self setValue:@(port) forKey:@"myPort"];
+		[self setValue:@(protocol) forKey:@"myProtocol"];
 		return self;
 	}
 	return nil;
 }
-+ (id)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
++ (instancetype)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol
 {
 	return [[EMInternetKeychainItem alloc] initWithCoreKeychainItem:item server:server username:username password:password path:path port:port protocol:protocol];
 }

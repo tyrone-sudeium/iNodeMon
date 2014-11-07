@@ -30,8 +30,8 @@
 - (void)update;
 
 // Bindings (read-only)
-- (AccountStatus *)accountStatus;
-- (AccountHistory *)accountHistory;
-- (BOOL)isUpdating;
+@property (nonatomic, readonly, strong) AccountStatus *accountStatus;
+@property (nonatomic, readonly, strong) AccountHistory *accountHistory;
+@property (nonatomic, getter=isUpdating, readonly) BOOL updating;
 
 @end

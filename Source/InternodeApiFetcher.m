@@ -20,7 +20,7 @@
 
 @implementation InternodeApiFetcher
 
-- (id)initWithPath:(NSString *)path callback: (void(^)(NSDictionary*)) callback
+- (instancetype)initWithPath:(NSString *)path callback: (void(^)(NSDictionary*)) callback
 {
 	if (!(self = [super init]))
 		return nil;

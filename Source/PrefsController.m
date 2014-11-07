@@ -42,7 +42,7 @@
 #ifdef DEBUG
 	NSLog(@"Changing Sparkle update interval to %f", intv);
 #endif
-	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithLong:intv]
+	[[NSUserDefaults standardUserDefaults] setValue: @((long)intv)
 						 forKey:@"SUScheduledCheckInterval"];
 	[updater scheduleCheckWithInterval:intv];
 }

@@ -18,6 +18,6 @@
 
 - (IBAction)checkForUpdatesChanged:(id)sender;
 
-- (EMGenericKeychainItem *)keychainItem;
+@property (nonatomic, readonly, strong) EMGenericKeychainItem *keychainItem;
 
 @end

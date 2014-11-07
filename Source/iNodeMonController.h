@@ -38,6 +38,6 @@
 - (IBAction)doHistory:(id)sender;
 
 // Bindings
-- (AccountController *)accountController;
+@property (nonatomic, readonly, strong) AccountController *accountController;
 
 @end

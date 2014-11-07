@@ -50,7 +50,7 @@
 {
 	NSString *myServiceName;
 }
-+ (id)genericKeychainItem:(SecKeychainItemRef)item forServiceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password;
++ (instancetype)genericKeychainItem:(SecKeychainItemRef)item forServiceName:(NSString *)serviceName username:(NSString *)username password:(NSString *)password;
 - (NSString *)serviceName;
 - (BOOL)setServiceName:(NSString *)newServiceName;
 @end
@@ -62,7 +62,7 @@
 	int myPort;
 	SecProtocolType myProtocol;
 }
-+ (id)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol;
++ (instancetype)internetKeychainItem:(SecKeychainItemRef)item forServer:(NSString *)server username:(NSString *)username password:(NSString *)password path:(NSString *)path port:(int)port protocol:(SecProtocolType)protocol;
 - (NSString *)server;
 - (NSString *)path;
 - (int)port;

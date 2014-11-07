@@ -23,26 +23,26 @@
 - (void)setServiceInfo:(NSString *)serviceInfo;
 
 
-- (double)fractionOfQuotaLeft;
-- (double)fractionOfTimeLeft;
-- (double)quotaTotal;
-- (int)daysLeft;
-- (int)daysInPeriod;
+@property (nonatomic, readonly) double fractionOfQuotaLeft;
+@property (nonatomic, readonly) double fractionOfTimeLeft;
+@property (nonatomic, readonly) double quotaTotal;
+@property (nonatomic, readonly) int daysLeft;
+@property (nonatomic, readonly) int daysInPeriod;
 
 // Bindable (or just bind to one of: "quota", "days")
 
 // Suitable for menu use
-- (NSString *)quotaUsedLongString;
-- (NSString *)quotaTotalLongString;
-- (NSString *)daysLeftLongString;
-- (NSString *)serviceInfoLongString;
+@property (nonatomic, readonly, copy) NSString *quotaUsedLongString;
+@property (nonatomic, readonly, copy) NSString *quotaTotalLongString;
+@property (nonatomic, readonly, copy) NSString *daysLeftLongString;
+@property (nonatomic, readonly, copy) NSString *serviceInfoLongString;
 
 // Suitable for status bar item use
-- (NSString *)quotaUsedPercentString;
-- (NSString *)quotaLeftPercentString;
-- (NSString *)daysUsedString;
-- (NSString *)daysLeftString;
-- (NSString *)daysUsedPercentString;
-- (NSString *)daysLeftPercentString;
+@property (nonatomic, readonly, copy) NSString *quotaUsedPercentString;
+@property (nonatomic, readonly, copy) NSString *quotaLeftPercentString;
+@property (nonatomic, readonly, copy) NSString *daysUsedString;
+@property (nonatomic, readonly, copy) NSString *daysLeftString;
+@property (nonatomic, readonly, copy) NSString *daysUsedPercentString;
+@property (nonatomic, readonly, copy) NSString *daysLeftPercentString;
 
 @end

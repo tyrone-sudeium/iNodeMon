@@ -34,7 +34,7 @@
 	// Default display options
 	[appDefaults setValue:@"quotaUsedPercent" forKey:@"StatusTextOptionUpper"];
 	[appDefaults setValue:@"daysLeft" forKey:@"StatusTextOptionLower"];
-	[appDefaults setValue:[NSNumber numberWithInt:30] forKey:@"NumDaysOfHistory"];
+	[appDefaults setValue:@30 forKey:@"NumDaysOfHistory"];
 
 	// Default colour options
 	[appDefaults setValue:[NSArchiver archivedDataWithRootObject:[NSColor redColor]]
@@ -44,7 +44,7 @@
 	[appDefaults setValue:[NSArchiver archivedDataWithRootObject:[NSColor blackColor]]
 		       forKey:@"StatusTextColourOk"];
 
-	[appDefaults setValue:[NSNumber numberWithBool:YES] forKey:@"SUEnableAutomaticChecks"];
+	[appDefaults setValue:@YES forKey:@"SUEnableAutomaticChecks"];
 
 	[[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
 }
@@ -108,13 +108,12 @@
 	float fontHeight = (sbHeight - 4) / 2;		// Enough for two lines, plus spacing
 	NSFont *font = [NSFont menuBarFontOfSize:fontHeight];
 
-	NSDictionary *attrs = [NSDictionary dictionaryWithObjectsAndKeys:
-		font, NSFontAttributeName, textColour, NSForegroundColorAttributeName, nil];
+	NSDictionary *attrs = @{NSFontAttributeName: font, NSForegroundColorAttributeName: textColour};
 	NSAttributedString *as = [[NSAttributedString alloc] initWithString:str attributes:attrs];
 	[statusItem setAttributedTitle:as];
 }
 
-- (id)init
+- (instancetype)init
 {
 	if (!(self = [super init]))
 		return nil;
@@ -204,49 +203,33 @@
 
 	// Populate display options
 	[displayOptionsController addObjects:
-		[NSArray arrayWithObjects:
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"nothing", @"parameter",
-				@"Nothing", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"quotaUsedPercent", @"parameter",
-				@"Quota Used (%)", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"quotaLeftPercent", @"parameter",
-				@"Quota Left (%)", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"daysUsed", @"parameter",
-				@"Days Used", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"daysLeft", @"parameter",
-				@"Days Left", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"daysUsedPercent", @"parameter",
-				@"Days Used (%)", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				@"daysLeftPercent", @"parameter",
-				@"Days Left (%)", @"description", nil],
-			nil]];
+		@[@{@"parameter": @"nothing",
+				@"description": @"Nothing"},
+			@{@"parameter": @"quotaUsedPercent",
+				@"description": @"Quota Used (%)"},
+			@{@"parameter": @"quotaLeftPercent",
+				@"description": @"Quota Left (%)"},
+			@{@"parameter": @"daysUsed",
+				@"description": @"Days Used"},
+			@{@"parameter": @"daysLeft",
+				@"description": @"Days Left"},
+			@{@"parameter": @"daysUsedPercent",
+				@"description": @"Days Used (%)"},
+			@{@"parameter": @"daysLeftPercent",
+				@"description": @"Days Left (%)"}]];
 
 	// Populate history periods
 	[historyPeriodsController addObjects:
-		[NSArray arrayWithObjects:
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithInt:30], @"numDays",
-				@"30 days", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithInt:60], @"numDays",
-				@"60 days", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithInt:90], @"numDays",
-				@"90 days", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithInt:365], @"numDays",
-				@"1 year", @"description", nil],
-			[NSDictionary dictionaryWithObjectsAndKeys:
-				[NSNumber numberWithInt:1e6], @"numDays",
-				@"All", @"description", nil],
-			nil]];
+		@[@{@"numDays": @30,
+				@"description": @"30 days"},
+			@{@"numDays": @60,
+				@"description": @"60 days"},
+			@{@"numDays": @90,
+				@"description": @"90 days"},
+			@{@"numDays": @365,
+				@"description": @"1 year"},
+			@{@"numDays": @((int)1e6),
+				@"description": @"All"}]];
 
 	// If our preferences change (esp. display prefs), we might need to immediately update things.
 	[[NSNotificationCenter defaultCenter] addObserver:self
@@ -284,7 +267,7 @@
 {
 	[NSApp activateIgnoringOtherApps:YES];
 	[NSApp orderFrontStandardAboutPanelWithOptions:
-		[NSDictionary dictionaryWithObject:@"" forKey:@"Version"]];
+		@{@"Version": @""}];
 }
 
 - (IBAction)doPreferences:(id)sender

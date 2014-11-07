@@ -34,7 +34,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 {
 	BOOL _logErrors;
 }
-+ (id)sharedProxy;
++ (EMKeychainProxy*)sharedProxy;
 - (void)lockKeychain;
 - (void)unlockKeychain;
 - (void)setLogsErrors:(BOOL)flag;

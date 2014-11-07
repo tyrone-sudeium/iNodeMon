@@ -32,7 +32,7 @@ static void ipChangeCallback(SCDynamicStoreRef store, CFArrayRef changedKeys, vo
         SCDynamicStoreRef store = SCDynamicStoreCreate(NULL, CFSTR("iNodeMon"), ipChangeCallback, &ctxt);
         CFRunLoopSourceRef runLoop = SCDynamicStoreCreateRunLoopSource(NULL, store, 0);
         CFRunLoopAddSource(CFRunLoopGetCurrent(), runLoop, kCFRunLoopCommonModes);
-        NSArray *keys = [NSArray arrayWithObject:@"State:/Network/Global/IPv4"];
+        NSArray *keys = @[@"State:/Network/Global/IPv4"];
         SCDynamicStoreSetNotificationKeys(store, (__bridge CFArrayRef) keys, NULL);
         CFRelease(store);
         CFRelease(runLoop);

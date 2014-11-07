@@ -15,13 +15,13 @@
 	[self exposeBinding:@"history"];
 }
 
-- (id)init
+- (instancetype)init
 {
 	if (!(self = [super init]))
 		return nil;
 
 	lock_ = [[NSRecursiveLock alloc] init];
-	usageData_ = [NSArray array];
+	usageData_ = @[];
 	lastDate_ = [NSCalendarDate calendarDate];
 
 	return self;
@@ -41,7 +41,7 @@
 						       calendarFormat:@"%Y-%m-%d"];
 		NSString *traffic = [[[node nodesForXPath:@"traffic[@name='total']"
 						    error:nil] lastObject] stringValue];
-		NSNumber *amt = [NSNumber numberWithFloat:[traffic floatValue] / (1000*1000)];
+		NSNumber *amt = @([traffic floatValue] / (1000*1000));
 
 		if (lastDate) {
 			NSInteger delta;
@@ -50,7 +50,7 @@
 			if (delta != 1) {
 				// History data has gaps, which we interpret as absolutely zero usage.
 				while (delta-- > 1)
-					[data addObject:[NSNumber numberWithFloat:0]];
+					[data addObject:@0.0f];
 			}
 		}
 
@@ -105,7 +105,7 @@
 		index = 0;
 	NSNumber *n;
 	for (; index < [usageData_ count]; ++index) {
-		n = [usageData_ objectAtIndex:index];
+		n = usageData_[index];
 		if (max < [n floatValue])
 			max = [n floatValue];
 	}
@@ -130,7 +130,7 @@
 	float usage = 0.0;
 	int index = [usageData_ count] - numDaysAgo - 1;
 	if ((index >= 0) && (index < [usageData_ count]))
-		usage = [[usageData_ objectAtIndex:index] floatValue];
+		usage = [usageData_[index] floatValue];
 	[self unlock];
 
 	return usage;

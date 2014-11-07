@@ -18,7 +18,7 @@
 - (void)waitForUpdateCompletionInThread:(id)sender;
 - (void)updateSemaphoreDown;
 
-- (EMGenericKeychainItem *)keychainItem;
+@property (nonatomic, readonly, strong) EMGenericKeychainItem *keychainItem;
 //- (NSString *)doQuery:(NSString *)query;
 
 @end
@@ -27,7 +27,7 @@
 
 @implementation AccountController
 
-- (id)init
+- (instancetype)init
 {
 	if (!(self = [super init]))
 		return nil;
@@ -82,7 +82,7 @@
 		return;
 	}
 
-	serviceId_ = [[services objectAtIndex:0] stringValue];
+	serviceId_ = [services[0] stringValue];
 
 	reupdateImmediately_ = YES;
 	[self updateSemaphoreDown];
@@ -118,8 +118,8 @@
 	}
 
 	NSXMLDocument *doc = [result valueForKey:@"document"];
-	NSXMLElement *node = [[doc nodesForXPath:@"//internode/api/traffic[@name='total']"
-					   error:nil] objectAtIndex:0];
+	NSXMLElement *node = [doc nodesForXPath:@"//internode/api/traffic[@name='total']"
+					   error:nil][0];
 #ifdef DEBUG
 	NSLog(@"Usage node: %@", node);
 #endif
