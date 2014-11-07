@@ -1,0 +1,4 @@
+<ul>
+<li>Separate timing for quota updates (2 hr) and link speed updates (24 hr)</li>
+<li>Improve update reliability and speed</li>
+</ul>

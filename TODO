@@ -1,0 +1,12 @@
+Before v1.0:
+	- Make AccountController much more robust to bad/missing data
+	- Support both monthly and quarterly intervals
+	- Adjust status bar text (push lines together by 2 pixels)
+	- Pop up message at start to enter username/password
+	- 'Start at login' preference
+	- Handle bad username/password nicer
+	- Factor code more, and test it
+
+Future:
+	- day numbers under history graph
+	- Show current IP address?

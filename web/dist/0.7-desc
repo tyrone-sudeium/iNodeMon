@@ -1,0 +1,7 @@
+<ul>
+<li>Update Internode Usage Meter API URL</li>
+</ul>
+<p>Internode is changing their Usage Meter API setup, and are now in the
+transitional period. You should install this iNodeMon update, or iNodeMon will
+cease to work in the near future.
+</p>

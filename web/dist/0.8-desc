@@ -1,0 +1,6 @@
+<p>All users should update if possible. The old API will stop working at some point.</p>
+<p><em>Note: This version of iNodeMon requires Mac OS X 10.5 (Leopard).</em></p>
+<ul>
+  <li>Use the new Internode XML API</li>
+  <li>Show plan name in menu</li>
+</ul>

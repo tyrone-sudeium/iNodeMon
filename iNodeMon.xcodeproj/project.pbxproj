@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		8D124D840D9371CC00E880EE /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D124D820D9371CC00E880EE /* AccountHistory.m */; };
+		8D124E270D938F9600E880EE /* HistoryGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D124E250D938F9600E880EE /* HistoryGraph.m */; };
+		8D2968900B683729002CCED2 /* iNodeMonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D29688F0B683729002CCED2 /* iNodeMonController.m */; };
+		8D2968E20B684161002CCED2 /* inode_icon_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2968E00B684161002CCED2 /* inode_icon_grey.png */; };
+		8D2968E30B684161002CCED2 /* inode_icon_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2968E10B684161002CCED2 /* inode_icon_orange.png */; };
+		8D2F6AB90D924F4B001D88D2 /* AccountStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D685B530D8687EB005EE936 /* AccountStatus.m */; };
+		8D2F6AC40D92507C001D88D2 /* AccountStatusTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F6AC30D92507C001D88D2 /* AccountStatusTest.m */; };
+		8D3A773C0DAA170E002DBC76 /* inodemon_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8D3A773B0DAA170E002DBC76 /* inodemon_icon.icns */; };
+		8D3D44830EA1883F00968444 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D44820EA1883F00968444 /* AccountController.m */; };
+		8D3D44840EA1883F00968444 /* AccountController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3D44820EA1883F00968444 /* AccountController.m */; };
+		8D5749150F591C31009FB177 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5991A40D82AFBD002E0380 /* EMKeychainProxy.m */; };
+		8D5749170F591C3A009FB177 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5991A20D82AFBD002E0380 /* EMKeychainItem.m */; };
+		8D5749190F591C42009FB177 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5991940D82AF26002E0380 /* Security.framework */; };
+		8D57491B0F591C4A009FB177 /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D124D820D9371CC00E880EE /* AccountHistory.m */; };
+		8D59912D0D82768C002E0380 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D59912C0D82768C002E0380 /* Sparkle.framework */; };
+		8D5991480D8282E4002E0380 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D59912C0D82768C002E0380 /* Sparkle.framework */; };
+		8D5991950D82AF26002E0380 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5991930D82AF26002E0380 /* Carbon.framework */; };
+		8D5991960D82AF26002E0380 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D5991940D82AF26002E0380 /* Security.framework */; };
+		8D5991A60D82AFBD002E0380 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5991A20D82AFBD002E0380 /* EMKeychainItem.m */; };
+		8D5991A80D82AFBD002E0380 /* EMKeychainProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5991A40D82AFBD002E0380 /* EMKeychainProxy.m */; };
+		8D5991CD0D82B101002E0380 /* PrefsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D5991CB0D82B101002E0380 /* PrefsController.m */; };
+		8D685B550D8687EB005EE936 /* AccountStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D685B530D8687EB005EE936 /* AccountStatus.m */; };
+		8D78BF89126B27EC00FD7571 /* InternodeApiFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78BF88126B27EC00FD7571 /* InternodeApiFetcher.m */; };
+		8D869D1F0DAA1E840055D843 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 8D869D1D0DAA1E840055D843 /* Credits.html */; };
+		8DF461EF12D96A1C00AFA31C /* InternodeApiFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D78BF88126B27EC00FD7571 /* InternodeApiFetcher.m */; };
+		8DFFFC560DA615FB000DED62 /* Triggers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DFFFC550DA615FB000DED62 /* Triggers.m */; };
+		8DFFFC680DA61745000DED62 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DFFFC670DA61745000DED62 /* SystemConfiguration.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8D5991440D8282C5002E0380 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8D5991480D8282E4002E0380 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Source/main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* iNodeMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNodeMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D124D810D9371CC00E880EE /* AccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountHistory.h; path = Source/AccountHistory.h; sourceTree = "<group>"; };
+		8D124D820D9371CC00E880EE /* AccountHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountHistory.m; path = Source/AccountHistory.m; sourceTree = "<group>"; };
+		8D124E240D938F9600E880EE /* HistoryGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryGraph.h; path = Source/HistoryGraph.h; sourceTree = "<group>"; };
+		8D124E250D938F9600E880EE /* HistoryGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryGraph.m; path = Source/HistoryGraph.m; sourceTree = "<group>"; };
+		8D29688E0B683729002CCED2 /* iNodeMonController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = iNodeMonController.h; path = Source/iNodeMonController.h; sourceTree = "<group>"; };
+		8D29688F0B683729002CCED2 /* iNodeMonController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = iNodeMonController.m; path = Source/iNodeMonController.m; sourceTree = "<group>"; };
+		8D2968E00B684161002CCED2 /* inode_icon_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_grey.png; path = Resources/inode_icon_grey.png; sourceTree = "<group>"; };
+		8D2968E10B684161002CCED2 /* inode_icon_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_orange.png; path = Resources/inode_icon_orange.png; sourceTree = "<group>"; };
+		8D2F6AA50D924DEA001D88D2 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D2F6AA60D924DEA001D88D2 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
+		8D2F6AC20D92507C001D88D2 /* AccountStatusTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountStatusTest.h; path = Source/AccountStatusTest.h; sourceTree = "<group>"; };
+		8D2F6AC30D92507C001D88D2 /* AccountStatusTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountStatusTest.m; path = Source/AccountStatusTest.m; sourceTree = "<group>"; };
+		8D3A773B0DAA170E002DBC76 /* inodemon_icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = inodemon_icon.icns; path = Resources/inodemon_icon.icns; sourceTree = "<group>"; };
+		8D3D44810EA1883F00968444 /* AccountController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountController.h; path = Source/AccountController.h; sourceTree = "<group>"; };
+		8D3D44820EA1883F00968444 /* AccountController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountController.m; path = Source/AccountController.m; sourceTree = "<group>"; };
+		8D59912C0D82768C002E0380 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		8D5991930D82AF26002E0380 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		8D5991940D82AF26002E0380 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		8D5991A10D82AFBD002E0380 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = EMKeychainItem.h; path = Source/EMKeychainItem.h; sourceTree = "<group>"; };
+		8D5991A20D82AFBD002E0380 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = EMKeychainItem.m; path = Source/EMKeychainItem.m; sourceTree = "<group>"; };
+		8D5991A30D82AFBD002E0380 /* EMKeychainProxy.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = EMKeychainProxy.h; path = Source/EMKeychainProxy.h; sourceTree = "<group>"; };
+		8D5991A40D82AFBD002E0380 /* EMKeychainProxy.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = EMKeychainProxy.m; path = Source/EMKeychainProxy.m; sourceTree = "<group>"; };
+		8D5991CA0D82B101002E0380 /* PrefsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefsController.h; path = Source/PrefsController.h; sourceTree = "<group>"; };
+		8D5991CB0D82B101002E0380 /* PrefsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PrefsController.m; path = Source/PrefsController.m; sourceTree = "<group>"; };
+		8D5B11650B6889830037404C /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
+		8D685B520D8687EB005EE936 /* AccountStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountStatus.h; path = Source/AccountStatus.h; sourceTree = "<group>"; };
+		8D685B530D8687EB005EE936 /* AccountStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AccountStatus.m; path = Source/AccountStatus.m; sourceTree = "<group>"; };
+		8D78BF87126B27EC00FD7571 /* InternodeApiFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternodeApiFetcher.h; path = Source/InternodeApiFetcher.h; sourceTree = "<group>"; };
+		8D78BF88126B27EC00FD7571 /* InternodeApiFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternodeApiFetcher.m; path = Source/InternodeApiFetcher.m; sourceTree = "<group>"; };
+		8D869D1E0DAA1E840055D843 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = en; path = en.lproj/Credits.html; sourceTree = "<group>"; };
+		8DFFFC540DA615FB000DED62 /* Triggers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Triggers.h; path = Source/Triggers.h; sourceTree = "<group>"; };
+		8DFFFC550DA615FB000DED62 /* Triggers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Triggers.m; path = Source/Triggers.m; sourceTree = "<group>"; };
+		8DFFFC670DA61745000DED62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				8D59912D0D82768C002E0380 /* Sparkle.framework in Frameworks */,
+				8D5991950D82AF26002E0380 /* Carbon.framework in Frameworks */,
+				8D5991960D82AF26002E0380 /* Security.framework in Frameworks */,
+				8DFFFC680DA61745000DED62 /* SystemConfiguration.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D2F6AA20D924DEA001D88D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D5749190F591C42009FB177 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8D29688E0B683729002CCED2 /* iNodeMonController.h */,
+				8D29688F0B683729002CCED2 /* iNodeMonController.m */,
+				8D5991CA0D82B101002E0380 /* PrefsController.h */,
+				8D5991CB0D82B101002E0380 /* PrefsController.m */,
+				8D685B520D8687EB005EE936 /* AccountStatus.h */,
+				8D685B530D8687EB005EE936 /* AccountStatus.m */,
+				8D124D810D9371CC00E880EE /* AccountHistory.h */,
+				8D124D820D9371CC00E880EE /* AccountHistory.m */,
+				8D124E240D938F9600E880EE /* HistoryGraph.h */,
+				8D124E250D938F9600E880EE /* HistoryGraph.m */,
+				8DFFFC540DA615FB000DED62 /* Triggers.h */,
+				8DFFFC550DA615FB000DED62 /* Triggers.m */,
+				8D3D44810EA1883F00968444 /* AccountController.h */,
+				8D3D44820EA1883F00968444 /* AccountController.m */,
+				8D78BF87126B27EC00FD7571 /* InternodeApiFetcher.h */,
+				8D78BF88126B27EC00FD7571 /* InternodeApiFetcher.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8DFFFC670DA61745000DED62 /* SystemConfiguration.framework */,
+				8D5991930D82AF26002E0380 /* Carbon.framework */,
+				8D5991940D82AF26002E0380 /* Security.framework */,
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+				8D59912C0D82768C002E0380 /* Sparkle.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* iNodeMon.app */,
+				8D2F6AA50D924DEA001D88D2 /* Unit Tests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* iNodeMon */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				8D2F6ABF0D924FBB001D88D2 /* Unit Tests */,
+				8D5B11650B6889830037404C /* TODO */,
+			);
+			name = iNodeMon;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8D5991A10D82AFBD002E0380 /* EMKeychainItem.h */,
+				8D5991A20D82AFBD002E0380 /* EMKeychainItem.m */,
+				8D5991A30D82AFBD002E0380 /* EMKeychainProxy.h */,
+				8D5991A40D82AFBD002E0380 /* EMKeychainProxy.m */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D3A773B0DAA170E002DBC76 /* inodemon_icon.icns */,
+				8D2968E00B684161002CCED2 /* inode_icon_grey.png */,
+				8D2968E10B684161002CCED2 /* inode_icon_orange.png */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				8D869D1D0DAA1E840055D843 /* Credits.html */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8D2F6ABF0D924FBB001D88D2 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				8D2F6AA60D924DEA001D88D2 /* Unit Tests-Info.plist */,
+				8D2F6AC20D92507C001D88D2 /* AccountStatusTest.h */,
+				8D2F6AC30D92507C001D88D2 /* AccountStatusTest.m */,
+			);
+			name = "Unit Tests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* iNodeMon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iNodeMon" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				8D5991440D8282C5002E0380 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iNodeMon;
+			productInstallPath = "$(HOME)/Applications";
+			productName = iNodeMon;
+			productReference = 8D1107320486CEB800E47090 /* iNodeMon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8D2F6AA40D924DEA001D88D2 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8D2F6AA90D924DEB001D88D2 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				8D2F6AA00D924DEA001D88D2 /* Resources */,
+				8D2F6AA10D924DEA001D88D2 /* Sources */,
+				8D2F6AA20D924DEA001D88D2 /* Frameworks */,
+				8D2F6AA30D924DEA001D88D2 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 8D2F6AA50D924DEA001D88D2 /* Unit Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iNodeMon" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* iNodeMon */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* iNodeMon */,
+				8D2F6AA40D924DEA001D88D2 /* Unit Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D2968E20B684161002CCED2 /* inode_icon_grey.png in Resources */,
+				8D2968E30B684161002CCED2 /* inode_icon_orange.png in Resources */,
+				8D3A773C0DAA170E002DBC76 /* inodemon_icon.icns in Resources */,
+				8D869D1F0DAA1E840055D843 /* Credits.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D2F6AA00D924DEA001D88D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D2F6AA30D924DEA001D88D2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				8D2968900B683729002CCED2 /* iNodeMonController.m in Sources */,
+				8D5991A60D82AFBD002E0380 /* EMKeychainItem.m in Sources */,
+				8D5991A80D82AFBD002E0380 /* EMKeychainProxy.m in Sources */,
+				8D5991CD0D82B101002E0380 /* PrefsController.m in Sources */,
+				8D685B550D8687EB005EE936 /* AccountStatus.m in Sources */,
+				8D124D840D9371CC00E880EE /* AccountHistory.m in Sources */,
+				8D124E270D938F9600E880EE /* HistoryGraph.m in Sources */,
+				8DFFFC560DA615FB000DED62 /* Triggers.m in Sources */,
+				8D3D44830EA1883F00968444 /* AccountController.m in Sources */,
+				8D78BF89126B27EC00FD7571 /* InternodeApiFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8D2F6AA10D924DEA001D88D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D2F6AB90D924F4B001D88D2 /* AccountStatus.m in Sources */,
+				8D2F6AC40D92507C001D88D2 /* AccountStatusTest.m in Sources */,
+				8D3D44840EA1883F00968444 /* AccountController.m in Sources */,
+				8D5749150F591C31009FB177 /* EMKeychainProxy.m in Sources */,
+				8D5749170F591C3A009FB177 /* EMKeychainItem.m in Sources */,
+				8D57491B0F591C4A009FB177 /* AccountHistory.m in Sources */,
+				8DF461EF12D96A1C00AFA31C /* InternodeApiFetcher.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* en */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		8D869D1D0DAA1E840055D843 /* Credits.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8D869D1E0DAA1E840055D843 /* en */,
+			);
+			name = Credits.html;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8D2F6AA70D924DEB001D88D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		8D2F6AA80D924DEB001D88D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_BIT_PRE_XCODE_3_1 = "ppc i386";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/Cocoa.framework/Headers/Cocoa.h";
+				INFOPLIST_FILE = "Unit Tests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Unit Tests";
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = iNodeMon;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)\"";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = iNodeMon;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_VERSION = 4.0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8D2F6AA90D924DEB001D88D2 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D2F6AA70D924DEB001D88D2 /* Debug */,
+				8D2F6AA80D924DEB001D88D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "iNodeMon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iNodeMon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

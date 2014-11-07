@@ -1,0 +1,8 @@
+<ul>
+  <li>
+    Correctly compute the number of days in current period.
+    This fixes the inaccuracy of date computations that are
+    especially noticeable during February/March.
+  </li>
+  <li>Miscellaneous clean-ups under the hood.</li>
+</ul>

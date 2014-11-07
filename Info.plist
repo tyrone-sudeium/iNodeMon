@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>inodemon_icon</string>
+	<key>CFBundleIdentifier</key>
+	<string>au.id.symonds.iNodeMon</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.8</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>0.8</string>
+	<key>InternodeQuickLinks</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Online Tools</string>
+			<key>URL</key>
+			<string>http://www.internode.on.net/support/tools/</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Network Status</string>
+			<key>URL</key>
+			<string>https://secure.internode.on.net/webtools/advisories/</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Purchase Data Blocks</string>
+			<key>URL</key>
+			<string>https://secure.internode.on.net/myinternode/sys2/blockscwt/purchaseBlocks.action</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Speed Test</string>
+			<key>URL</key>
+			<string>http://www.internode.on.net/support/tools/speed_test/</string>
+		</dict>
+	</array>
+	<key>InternodeAPI</key>
+	<string>https://customer-webtools-api.internode.on.net/api/v1.5</string>
+	<key>InternodeUpdateIntervalHistory</key>
+	<string>21600</string>
+	<key>InternodeUpdateIntervalServiceInfo</key>
+	<integer>86400</integer>
+	<key>InternodeUpdateIntervalQuota</key>
+	<integer>7200</integer>
+	<key>LSUIElement</key>
+	<string>1</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright © 2007-2011 David Symonds</string>
+	<key>NSMainNibFile</key>
+	<string>MainMenu</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>http://www.symonds.id.au/inodemon/appcast.cgi</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
+</dict>
+</plist>

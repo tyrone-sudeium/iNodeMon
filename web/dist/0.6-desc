@@ -1,0 +1,5 @@
+<ul>
+<li>Low/ahead/okay status text colours are now configurable</li>
+<li>Refresh considered when waking from sleep</li>
+<li>A new "Nothing" option for the status text display options</li>
+</ul>
