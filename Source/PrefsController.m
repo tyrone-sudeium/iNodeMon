@@ -44,7 +44,7 @@
 #endif
 	[[NSUserDefaults standardUserDefaults] setValue: @((long)intv)
 						 forKey:@"SUScheduledCheckInterval"];
-	[updater scheduleCheckWithInterval:intv];
+	[updater setUpdateCheckInterval: intv];
 }
 
 - (EMGenericKeychainItem *)keychainItem

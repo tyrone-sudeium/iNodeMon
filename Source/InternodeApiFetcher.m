@@ -10,8 +10,8 @@
 #import "InternodeApiFetcher.h"
 
 
-@interface InternodeApiFetcher (Private)
-@property (nonatomic, strong) void(^callback)(NSDictionary*);
+@interface InternodeApiFetcher ()
+@property (nonatomic, copy) void(^callback)(NSDictionary*);
 - (void)runCallback;
 
 @end

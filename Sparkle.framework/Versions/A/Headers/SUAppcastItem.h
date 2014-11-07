@@ -9,56 +9,31 @@
 #ifndef SUAPPCASTITEM_H
 #define SUAPPCASTITEM_H
 
-
-@interface SUAppcastItem : NSObject {
-	NSString *title;
-	NSDate *date;
-	NSString *description;
-	
-	NSURL *releaseNotesURL;
-	
-	NSString *DSASignature;
-	NSString *MD5Sum;
-	
-	NSString *minimumSystemVersion;
-	
-	NSURL *fileURL;
-	NSString *fileVersion;
-	NSString *versionString;
-}
+@interface SUAppcastItem : NSObject
+@property (copy, readonly) NSString *title;
+@property (copy, readonly) NSDate *date;
+@property (copy, readonly) NSString *itemDescription;
+@property (strong, readonly) NSURL *releaseNotesURL;
+@property (copy, readonly) NSString *DSASignature;
+@property (copy, readonly) NSString *minimumSystemVersion;
+@property (copy, readonly) NSString *maximumSystemVersion;
+@property (strong, readonly) NSURL *fileURL;
+@property (copy, readonly) NSString *versionString;
+@property (copy, readonly) NSString *displayVersionString;
+@property (copy, readonly) NSDictionary *deltaUpdates;
+@property (strong, readonly) NSURL *infoURL;
 
 // Initializes with data from a dictionary provided by the RSS class.
-- initWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithDictionary:(NSDictionary *)dict failureReason:(NSString **)error;
 
-- (NSString *)title;
-- (void)setTitle:(NSString *)aTitle;
+@property (getter=isDeltaUpdate, readonly) BOOL deltaUpdate;
+@property (getter=isCriticalUpdate, readonly) BOOL criticalUpdate;
 
-- (NSDate *)date;
-- (void)setDate:(NSDate *)aDate;
+// Returns the dictionary provided in initWithDictionary; this might be useful later for extensions.
+@property (readonly, copy) NSDictionary *propertiesDictionary;
 
-- (NSString *)description;
-- (void)setDescription:(NSString *)aDescription;
-
-- (NSURL *)releaseNotesURL;
-- (void)setReleaseNotesURL:(NSURL *)aReleaseNotesURL;
-
-- (NSString *)DSASignature;
-- (void)setDSASignature:(NSString *)aDSASignature;
-
-- (NSString *)MD5Sum;
-- (void)setMD5Sum:(NSString *)aMd5Sum;
-
-- (NSURL *)fileURL;
-- (void)setFileURL:(NSURL *)aFileURL;
-
-- (NSString *)fileVersion;
-- (void)setFileVersion:(NSString *)aFileVersion;
-
-- (NSString *)versionString;
-- (void)setVersionString:(NSString *)versionString;
-
-- (NSString *)minimumSystemVersion;
-- (void)setMinimumSystemVersion:(NSString *)systemVersionString;
+- (NSURL *)infoURL;
 
 @end
 
