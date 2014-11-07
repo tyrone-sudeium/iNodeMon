@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>inodemon_icon</string>
 	<key>CFBundleIdentifier</key>
-	<string>au.id.symonds.iNodeMon</string>
+	<string>com.sudeium.iNodeMon</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -22,6 +22,8 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>0.8</string>
+	<key>InternodeAPI</key>
+	<string>https://customer-webtools-api.internode.on.net/api/v1.5</string>
 	<key>InternodeQuickLinks</key>
 	<array>
 		<dict>
@@ -49,14 +51,14 @@
 			<string>http://www.internode.on.net/support/tools/speed_test/</string>
 		</dict>
 	</array>
-	<key>InternodeAPI</key>
-	<string>https://customer-webtools-api.internode.on.net/api/v1.5</string>
 	<key>InternodeUpdateIntervalHistory</key>
 	<string>21600</string>
-	<key>InternodeUpdateIntervalServiceInfo</key>
-	<integer>86400</integer>
 	<key>InternodeUpdateIntervalQuota</key>
 	<integer>7200</integer>
+	<key>InternodeUpdateIntervalServiceInfo</key>
+	<integer>86400</integer>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSUIElement</key>
 	<string>1</string>
 	<key>NSHumanReadableCopyright</key>
