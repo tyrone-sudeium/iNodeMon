@@ -18,26 +18,25 @@
 
 @implementation AccountStatus
 
-+ (void)initialize
++ (NSSet*) keyPathsForValuesAffectingValueForKey:(NSString *)key
 {
-	// Register dependencies
-	NSDictionary *dependencies = [NSDictionary dictionaryWithObjectsAndKeys:
-		[NSArray arrayWithObjects:@"quotaUsedLongString", @"quotaTotalLongString",
-					@"quotaUsedPercentString", @"quotaLeftPercentString", nil], @"quota",
-		[NSArray arrayWithObjects:@"daysLeftLongString",
-					@"daysUsedString", @"daysLeftString",
-					@"daysUsedPercentString", @"daysLeftPercentString", nil], @"days",
-		[NSArray arrayWithObjects:@"serviceInfoLongString", nil], @"serviceInfo",
-		nil];
-	NSEnumerator *en = [dependencies keyEnumerator];
-	NSString *key;
-	while ((key = [en nextObject])) {
-		NSArray *keyArray = [NSArray arrayWithObject:key];
-		NSEnumerator *dep_en = [[dependencies objectForKey:key] objectEnumerator];
-		NSString *depKey;
-		while ((depKey = [dep_en nextObject]))
-			[self setKeys:keyArray triggerChangeNotificationsForDependentKey:depKey];
-	}
+    static NSSet *keys = nil;
+    if (keys == nil) {
+        keys = [NSSet setWithObjects: @"daysLeftLongString",
+                   @"daysUsedString", @"daysLeftString",
+                   @"daysUsedPercentString", @"daysLeftPercentString", nil];
+    }
+    if ([keys containsObject: key]) {
+        static NSSet *values = nil;
+        if (values == nil) {
+            values = [NSSet setWithObjects: @"quotaUsedLongString", @"quotaTotalLongString",
+                                @"quotaUsedPercentString", @"quotaLeftPercentString", nil];
+        }
+        return values;
+    } else if ([key isEqualToString: @"serviceInfo"]) {
+        return [NSSet setWithObject: @"serviceInfoLongString"];
+    }
+    return nil;
 }
 
 - (id)init

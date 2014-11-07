@@ -53,7 +53,6 @@
 - (NSImage *)prepareImageForMenubar:(NSString *)name
 {
 	NSImage *img = [NSImage imageNamed:name];
-	[img setScalesWhenResized:YES];
 	[img setSize:NSMakeSize(18, 18)];
 
 	return img;
@@ -68,10 +67,11 @@
 	SEL sel = sel_registerName([selName cStringUsingEncoding:NSMacOSRomanStringEncoding]);
 
 	AccountStatus *status = [accountController_ accountStatus];
-	if ([status respondsToSelector:sel])
-		return [status performSelector:sel];
-	else
+    if ([status respondsToSelector:sel]) {
+		return [status valueForKey: selName];
+    } else {
 		return @"???";
+    }
 }
 
 - (void)updateStatusItem

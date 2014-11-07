@@ -70,11 +70,11 @@ static EMKeychainProxy* sharedProxy;
 	{
 		if (_logErrors)
 		{
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [NSError errorWithDomain: NSOSStatusErrorDomain code:returnStatus userInfo: nil]);
 		}
 		return nil;
 	}
-	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
+	NSString *passwordString = [NSString stringWithUTF8String:password];
 
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
 }
@@ -103,11 +103,11 @@ static EMKeychainProxy* sharedProxy;
 	{
 		if (_logErrors)
 		{
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [NSError errorWithDomain: NSOSStatusErrorDomain code:returnStatus userInfo: nil]);
 		}
 		return nil;
 	}
-	NSString *passwordString = [NSString stringWithCString:password length:passwordLength];
+	NSString *passwordString = [NSString stringWithUTF8String: password];
 	
 	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];
 }
@@ -129,7 +129,7 @@ static EMKeychainProxy* sharedProxy;
 	
 	if (returnStatus != noErr || !item)
 	{
-		NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+		NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [NSError errorWithDomain: NSOSStatusErrorDomain code:returnStatus userInfo: nil]);
 		return nil;
 	}
 	return [EMGenericKeychainItem genericKeychainItem:item forServiceName:serviceNameString username:usernameString password:passwordString];
@@ -155,7 +155,7 @@ static EMKeychainProxy* sharedProxy;
 	
 	if (returnStatus != noErr || !item)
 	{
-		NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+		NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [NSError errorWithDomain: NSOSStatusErrorDomain code:returnStatus userInfo: nil]);
 		return nil;
 	}
 	return [EMInternetKeychainItem internetKeychainItem:item forServer:serverString username:usernameString password:passwordString path:pathString port:port protocol:protocol];

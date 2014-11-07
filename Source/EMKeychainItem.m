@@ -195,7 +195,7 @@
 	SecKeychainAttribute attributes[1];
 	attributes[0].tag = kSecProtocolItemAttr;
 	attributes[0].length = sizeof(newProtocol);
-	attributes[0].data = (void *)newProtocol;
+	attributes[0].data = newProtocol;
 	
 	SecKeychainAttributeList list;
 	list.count = 1;

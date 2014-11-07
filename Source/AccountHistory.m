@@ -44,7 +44,7 @@
 		NSNumber *amt = [NSNumber numberWithFloat:[traffic floatValue] / (1000*1000)];
 
 		if (lastDate) {
-			int delta;
+			NSInteger delta;
 			[date years:nil months:nil days:&delta
 			      hours:nil minutes:nil seconds:nil sinceDate:lastDate];
 			if (delta != 1) {
@@ -59,7 +59,7 @@
 	}
 
 #ifdef DEBUG
-	NSLog(@"Loaded %d days of usage history.", [data count]);
+	NSLog(@"Loaded %lu days of usage history.", (unsigned long)[data count]);
 #endif
 
 	[self willChangeValueForKey:@"history"];
