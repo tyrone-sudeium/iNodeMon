@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B1D56F91A0DB4F6007441A7 /* inode_icon_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D56F51A0DB4F6007441A7 /* inode_icon_grey.png */; };
+		8B1D56FA1A0DB4F6007441A7 /* inode_icon_grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D56F61A0DB4F6007441A7 /* inode_icon_grey@2x.png */; };
+		8B1D56FB1A0DB4F6007441A7 /* inode_icon_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D56F71A0DB4F6007441A7 /* inode_icon_orange.png */; };
+		8B1D56FC1A0DB4F6007441A7 /* inode_icon_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B1D56F81A0DB4F6007441A7 /* inode_icon_orange@2x.png */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		8D124D840D9371CC00E880EE /* AccountHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D124D820D9371CC00E880EE /* AccountHistory.m */; };
 		8D124E270D938F9600E880EE /* HistoryGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D124E250D938F9600E880EE /* HistoryGraph.m */; };
 		8D2968900B683729002CCED2 /* iNodeMonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D29688F0B683729002CCED2 /* iNodeMonController.m */; };
-		8D2968E20B684161002CCED2 /* inode_icon_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2968E00B684161002CCED2 /* inode_icon_grey.png */; };
-		8D2968E30B684161002CCED2 /* inode_icon_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = 8D2968E10B684161002CCED2 /* inode_icon_orange.png */; };
 		8D2F6AB90D924F4B001D88D2 /* AccountStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D685B530D8687EB005EE936 /* AccountStatus.m */; };
 		8D2F6AC40D92507C001D88D2 /* AccountStatusTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D2F6AC30D92507C001D88D2 /* AccountStatusTest.m */; };
 		8D3A773C0DAA170E002DBC76 /* inodemon_icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8D3A773B0DAA170E002DBC76 /* inodemon_icon.icns */; };
@@ -59,6 +61,10 @@
 		29B97319FDCFA39411CA2CEA /* en */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = en; path = en.lproj/MainMenu.nib; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		8B1D56F51A0DB4F6007441A7 /* inode_icon_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_grey.png; path = Resources/inode_icon_grey.png; sourceTree = "<group>"; };
+		8B1D56F61A0DB4F6007441A7 /* inode_icon_grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "inode_icon_grey@2x.png"; path = "Resources/inode_icon_grey@2x.png"; sourceTree = "<group>"; };
+		8B1D56F71A0DB4F6007441A7 /* inode_icon_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_orange.png; path = Resources/inode_icon_orange.png; sourceTree = "<group>"; };
+		8B1D56F81A0DB4F6007441A7 /* inode_icon_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "inode_icon_orange@2x.png"; path = "Resources/inode_icon_orange@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* iNodeMon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNodeMon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D124D810D9371CC00E880EE /* AccountHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountHistory.h; path = Source/AccountHistory.h; sourceTree = "<group>"; };
@@ -67,8 +73,6 @@
 		8D124E250D938F9600E880EE /* HistoryGraph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryGraph.m; path = Source/HistoryGraph.m; sourceTree = "<group>"; };
 		8D29688E0B683729002CCED2 /* iNodeMonController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = iNodeMonController.h; path = Source/iNodeMonController.h; sourceTree = "<group>"; };
 		8D29688F0B683729002CCED2 /* iNodeMonController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = iNodeMonController.m; path = Source/iNodeMonController.m; sourceTree = "<group>"; };
-		8D2968E00B684161002CCED2 /* inode_icon_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_grey.png; path = Resources/inode_icon_grey.png; sourceTree = "<group>"; };
-		8D2968E10B684161002CCED2 /* inode_icon_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = inode_icon_orange.png; path = Resources/inode_icon_orange.png; sourceTree = "<group>"; };
 		8D2F6AA50D924DEA001D88D2 /* Unit Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D2F6AA60D924DEA001D88D2 /* Unit Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Unit Tests-Info.plist"; sourceTree = "<group>"; };
 		8D2F6AC20D92507C001D88D2 /* AccountStatusTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AccountStatusTest.h; path = Source/AccountStatusTest.h; sourceTree = "<group>"; };
@@ -204,8 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				8D3A773B0DAA170E002DBC76 /* inodemon_icon.icns */,
-				8D2968E00B684161002CCED2 /* inode_icon_grey.png */,
-				8D2968E10B684161002CCED2 /* inode_icon_orange.png */,
+				8B1D56F51A0DB4F6007441A7 /* inode_icon_grey.png */,
+				8B1D56F61A0DB4F6007441A7 /* inode_icon_grey@2x.png */,
+				8B1D56F71A0DB4F6007441A7 /* inode_icon_orange.png */,
+				8B1D56F81A0DB4F6007441A7 /* inode_icon_orange@2x.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
 				8D869D1D0DAA1E840055D843 /* Credits.html */,
@@ -311,11 +317,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B1D56FA1A0DB4F6007441A7 /* inode_icon_grey@2x.png in Resources */,
+				8B1D56FC1A0DB4F6007441A7 /* inode_icon_orange@2x.png in Resources */,
 				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
-				8D2968E20B684161002CCED2 /* inode_icon_grey.png in Resources */,
-				8D2968E30B684161002CCED2 /* inode_icon_orange.png in Resources */,
 				8D3A773C0DAA170E002DBC76 /* inodemon_icon.icns in Resources */,
 				8D869D1F0DAA1E840055D843 /* Credits.html in Resources */,
+				8B1D56FB1A0DB4F6007441A7 /* inode_icon_orange.png in Resources */,
+				8B1D56F91A0DB4F6007441A7 /* inode_icon_grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
